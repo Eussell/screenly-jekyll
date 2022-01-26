@@ -70,6 +70,9 @@
 		eWeatherSummary.className =
 			"w-summary w-icon-" + current.data.next_1_hours.summary.symbol_code;
 
+		var eWindspeed = document.querySelector("#windspeed");
+		eWindspeed.innerHTML = current.data.instant.details.wind_speed + " km/h";
+
 		// var eWeatherSummaryText = document.querySelector('.w-summary-text');
 		// eWeatherSummaryText.innerHTML = current.data.next_1_hours.summary.symbol_code;
 
@@ -116,6 +119,8 @@
 			eBody.className = "bg-default";
 		}
 
+		// e.body.style.background = "#1a1a1a";
+
 		// Get setting
 		var w_width = window.innerWidth;
 		var w_height = window.innerHeight;
@@ -124,7 +129,7 @@
 		var s_count = mode == "landscape" ? 9 : 6;
 		var c_margin = -150;
 		var c_xaxis_y = -120;
-		var c_series_fontsize = 24;
+		var c_series_fontsize = 15;
 
 		if (w_height < 1080 || (w_width < 800 && mode == "portrait")) {
 			if (w_height <= 480) {
@@ -307,12 +312,12 @@
 							[
 								1,
 								Highcharts.color(Highcharts.getOptions().colors[0])
-									.setOpacity(0.1)
+									.setOpacity(0.2)
 									.get("rgba"),
 							],
 						],
 					},
-					fillOpacity: 0.1,
+					fillOpacity: 0,
 				},
 			},
 			tooltip: {

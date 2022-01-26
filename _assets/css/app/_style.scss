@@ -7,6 +7,7 @@ body {
 	font-family: "Barlow", sans-serif;
 	font-weight: 500;
 	backdrop-filter: blur(13px);
+	// background: #1a1a1a;
 }
 
 .bg-default {
@@ -200,6 +201,37 @@ body {
 		font-weight: 500;
 	}
 }
+.temp-cntr {
+	position: relative !important;
+	// background: red;
+}
+
+#deg-symbol {
+	font-size: 5em;
+	// background-color: red;
+	// position: absolute;
+	top: 10px;
+	right: 30px;
+	margin-bottom: 80px;
+}
+
+.windspeed-cntr {
+	display: flex;
+
+	div:nth-of-type(1) {
+		background: red;
+		height: 40px;
+		width: 40px;
+		background: asset_url("img/icons/windspeed.png") no-repeat center center
+			contain;
+		margin-left: 30px;
+		background-size: contain;
+	}
+
+	#windspeed {
+		margin: 0px;
+	}
+}
 
 @media only screen and (max-width: 3840px) and (orientation: landscape) {
 	.row {
@@ -230,7 +262,8 @@ body {
 		font-size: 40px;
 	}
 	#top-clock {
-		font-size: 52px;
+		// font-size: 52px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 378px;
@@ -243,6 +276,9 @@ body {
 		width: 64px;
 		height: 64px;
 		top: 12px;
+	}
+	#windspeed {
+		font-size: 40px;
 	}
 }
 
@@ -275,7 +311,8 @@ body {
 		font-size: 32px;
 	}
 	#top-clock {
-		font-size: 36px;
+		// font-size: 36px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 224px;
@@ -288,6 +325,9 @@ body {
 		width: 48px;
 		height: 48px;
 		top: 12px;
+	}
+	#windspeed {
+		font-size: 30px;
 	}
 }
 
@@ -320,7 +360,8 @@ body {
 		font-size: 40px;
 	}
 	#top-clock {
-		font-size: 72px;
+		// font-size: 72px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 378px;
@@ -365,7 +406,8 @@ body {
 		font-size: 24px;
 	}
 	#top-clock {
-		font-size: 56px;
+		// font-size: 56px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 224px;
@@ -410,7 +452,8 @@ body {
 		font-size: 24px;
 	}
 	#top-clock {
-		font-size: 48px;
+		// font-size: 48px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 176px;
@@ -455,7 +498,8 @@ body {
 		font-size: 16px;
 	}
 	#top-clock {
-		font-size: 26px;
+		// font-size: 26px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 104px;
@@ -500,7 +544,8 @@ body {
 		font-size: 20px;
 	}
 	#top-clock {
-		font-size: 48px;
+		// font-size: 48px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 176px;
@@ -573,7 +618,8 @@ body {
 		font-size: 8px;
 	}
 	#top-clock {
-		font-size: 20px;
+		// font-size: 20px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 80px;
@@ -618,7 +664,8 @@ body {
 		font-size: 13.33px;
 	}
 	#top-clock {
-		font-size: 26px;
+		// font-size: 26px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 104px;
@@ -631,6 +678,9 @@ body {
 		width: 20px;
 		height: 20px;
 		top: 5px;
+	}
+	#windspeed {
+		font-size: 20px;
 	}
 }
 
@@ -663,7 +713,8 @@ body {
 		font-size: 10px;
 	}
 	#top-clock {
-		font-size: 20px;
+		// font-size: 20px;
+		font-size: 1.7vw;
 	}
 	#temperature {
 		font-size: 80px;
