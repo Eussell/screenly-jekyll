@@ -217,20 +217,43 @@ body {
 
 .windspeed-cntr {
 	display: flex;
-
-	div:nth-of-type(1) {
-		background: red;
-		height: 40px;
-		width: 40px;
-		background: asset_url("img/icons/windspeed.png") no-repeat center center
-			contain;
-		margin-left: 30px;
-		background-size: contain;
-	}
+	align-items: center;
+	justify-content: flex-end;
 
 	#windspeed {
 		margin: 0px;
 	}
+
+	#windspeed-icon {
+		// background: red;
+		height: 40px;
+		width: 40px;
+		background: asset_url("img/icons/windspeed.svg") no-repeat center center
+			contain;
+		margin-left: 30px;
+		background-size: contain;
+		display: grid;
+		justify-content: flex-end;
+	}
+
+	// #windspeed::before {
+	// 	content: "";
+	// 	background: asset_url("img/icons/nt_clear.svg") no-repeat center center;
+	// 	background-size: 100px 100px;
+	// 	// position: absolute;
+	// 	// left: 0px;
+	// 	background: red;
+	// 	height: 100px;
+	// 	width: 100px;
+	// }
+
+	// #windspeed-icon {
+	// 	// background: asset_url("img/icons/nt_clear.svg") no-repeat center center;
+	// 	// background-size: 100px 100px;
+	// 	background: red;
+	// height: 100px;
+	// width: 100px;
+	// }
 }
 
 @media only screen and (max-width: 3840px) and (orientation: landscape) {
@@ -262,8 +285,8 @@ body {
 		font-size: 40px;
 	}
 	#top-clock {
-		// font-size: 52px;
-		font-size: 1.7vw;
+		font-size: 58px;
+		// background: green;
 	}
 	#temperature {
 		font-size: 378px;
@@ -312,7 +335,8 @@ body {
 	}
 	#top-clock {
 		// font-size: 36px;
-		font-size: 1.7vw;
+		font-size: 20px;
+		// background: orange;
 	}
 	#temperature {
 		font-size: 224px;
@@ -332,6 +356,8 @@ body {
 }
 
 @media only screen and (max-width: 2160px) and (orientation: portrait) {
+	//* 720px
+
 	.row {
 		padding: 0 128px 216px;
 	}
@@ -361,7 +387,8 @@ body {
 	}
 	#top-clock {
 		// font-size: 72px;
-		font-size: 1.7vw;
+		font-size: 23px;
+		// background: red;
 	}
 	#temperature {
 		font-size: 378px;
@@ -378,6 +405,8 @@ body {
 }
 
 @media only screen and (max-width: 1440px) and (orientation: portrait) {
+	//* 720px
+
 	.row {
 		padding: 0 128px 150px;
 	}
@@ -406,8 +435,8 @@ body {
 		font-size: 24px;
 	}
 	#top-clock {
-		// font-size: 56px;
-		font-size: 1.7vw;
+		font-size: 32px;
+		// background: yellow;
 	}
 	#temperature {
 		font-size: 224px;
@@ -420,6 +449,12 @@ body {
 		width: 48px;
 		height: 48px;
 		top: 12px;
+	}
+	.chart-container {
+		height: 200px;
+	}
+	.bottom-temp {
+		font-size: 30px;
 	}
 }
 
@@ -452,14 +487,14 @@ body {
 		font-size: 24px;
 	}
 	#top-clock {
-		// font-size: 48px;
-		font-size: 1.7vw;
+		// background: black;
+		font-size: 35px;
 	}
 	#temperature {
-		font-size: 176px;
+		font-size: 165px;
 	}
 	#location {
-		font-size: 48px;
+		font-size: 38px;
 		padding-left: 48px;
 	}
 	#location::before {
@@ -467,9 +502,15 @@ body {
 		height: 32px;
 		top: 12px;
 	}
+	#windspeed {
+		font-size: 38px;
+		margin-left: 20px;
+	}
 }
 
 @media only screen and (max-width: 1280px) and (orientation: landscape) {
+	//* 1024px
+
 	.row {
 		padding: 0 112px 50px;
 	}
@@ -498,8 +539,8 @@ body {
 		font-size: 16px;
 	}
 	#top-clock {
-		// font-size: 26px;
-		font-size: 1.7vw;
+		// background: brown;
+		font-size: 20px;
 	}
 	#temperature {
 		font-size: 104px;
@@ -512,6 +553,9 @@ body {
 		width: 20px;
 		height: 20px;
 		top: 5px;
+	}
+	#windspeed {
+		font-size: 26px;
 	}
 }
 
@@ -544,8 +588,8 @@ body {
 		font-size: 20px;
 	}
 	#top-clock {
-		// font-size: 48px;
-		font-size: 1.7vw;
+		// background: purple;
+		font-size: 20px;
 	}
 	#temperature {
 		font-size: 176px;
@@ -578,6 +622,7 @@ body {
 		font-size: 12px;
 	}
 	#top-clock {
+		// background: pink;
 		font-size: 20px;
 	}
 	#temperature {
@@ -618,8 +663,8 @@ body {
 		font-size: 8px;
 	}
 	#top-clock {
-		// font-size: 20px;
-		font-size: 1.7vw;
+		background: turquoise;
+		font-size: 20px;
 	}
 	#temperature {
 		font-size: 80px;
@@ -640,7 +685,7 @@ body {
 		padding: 0 64px 50px;
 	}
 	.banner-text {
-		font-size: 32px;
+		font-size: 42px;
 		padding: 80px 0;
 		// background: linear-gradient(
 		// 	164.87deg,
@@ -664,8 +709,8 @@ body {
 		font-size: 13.33px;
 	}
 	#top-clock {
-		// font-size: 26px;
-		font-size: 1.7vw;
+		// background: goldenrod;
+		font-size: 18px;
 	}
 	#temperature {
 		font-size: 104px;
@@ -713,8 +758,8 @@ body {
 		font-size: 10px;
 	}
 	#top-clock {
-		// font-size: 20px;
-		font-size: 1.7vw;
+		// background: indianred;
+		font-size: 20px;
 	}
 	#temperature {
 		font-size: 80px;

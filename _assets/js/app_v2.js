@@ -295,7 +295,12 @@
 					dataLabels: {
 						enabled: true,
 						formatter: function () {
-							return "<span>" + (this.y - 10).toFixed(1) + "&deg;" + "</span>";
+							return (
+								"<span class='bottom-temp'>" +
+								(this.y - 10).toFixed(1) +
+								"&deg;" +
+								"</span>"
+							);
 						},
 						style: {
 							color: "#ffffff",
