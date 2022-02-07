@@ -119,7 +119,7 @@
 			eBody.className = "bg-default";
 		}
 
-		// e.body.style.background = "#1a1a1a";
+		eBody.className = "bg-snow";
 
 		// Get setting
 		var w_width = window.innerWidth;
@@ -213,54 +213,30 @@
 			}
 		}
 
-		// console.log(temps);
-
-		// const temps = [-19, 21, 23, 24, 23, 21, 21, 20, 18];
-
-		// let bump = false;
-
-		// temps.map((e) => {
-		// 	// if (e < 0) bump = true;
-		// 	console.log(e);
-		// });
-
-		// function reverseInt(int) {
-		// 	var intRev = "";
-		// 	var start = int < 0 ? 1 : 0;
-		// 	for (var i = start; i < int.length; i++) {
-		// 		intRev = int[i] + intRev;
-		// 	}
-		// 	return int < 0 ? "-" + intRev : intRev;
-		// }
-
-		function reverseInt(n) {
-			return n < 0 ? Math.abs(n) : n;
-		}
-
-		var bump_chart = false;
+		var bump_chart = false,
+			re_balance = 0;
 
 		var asmo = [
-			-37.1, -37, -36.8, -36.6, -8.1, -36.4, -36.1, -35.4, -35.2, -35.7, -36.5,
+			-27.1, -37, -40.8, -36.6, -20.1, -36.4, -46.1, -45.4, -55.2, -45.7, -36.5,
 		];
 
-		var bumped_series = asmo;
+		temps = asmo;
 
-		for (var i = 0; i < asmo.length; i++) {
-			if (asmo[i] < 0) bump_chart = true;
+		for (var i = 0; i < temps.length; i++) {
+			if (temps[i] < 0) bump_chart = true;
 		}
 
 		if (bump_chart) {
-			bumped_series = [];
-			for (var i = 0; i < asmo.length; i++) {
-				bumped_series.push(reverseInt(asmo[i]));
+			original = temps;
+			temps = [];
+			re_balance = 100;
+
+			for (var i = 0; i < original.length; i++) {
+				temps.push(original[i] + re_balance);
 			}
+
+			max_temp = 100;
 		}
-
-		console.log(bumped_series);
-
-		// var footer_chart = document.querySelector(".chart-container");
-		// footer_chart.style.height = 100;
-		// footer_chart.style.background = "red";
 
 		/**
 		 * Run time process for first time
@@ -287,7 +263,6 @@
 				backgroundColor: "transparent",
 				margin: [0, c_margin, 0, c_margin],
 				spacing: [0, 0, 0, 0],
-				height: c_height,
 			},
 			title: {
 				text: undefined,
@@ -345,8 +320,12 @@
 						enabled: true,
 						formatter: function () {
 							return (
-								"<span class='bottom-temp'>" +
-								(this.y - 10).toFixed(1) +
+								"<span " +
+								"id='bottom-temp-" +
+								Math.round(Math.random() * (20 - 0) + 0) +
+								"'>" +
+								// ((this.y - 10).toFixed(1) - re_balance) +
+								Math.round(((this.y - 10).toFixed(1) - re_balance) * 10) / 10 +
 								"&deg;" +
 								"</span>"
 							);
@@ -372,7 +351,6 @@
 						],
 					},
 					fillOpacity: 0,
-					// tension: 0.4,
 				},
 			},
 			tooltip: {
