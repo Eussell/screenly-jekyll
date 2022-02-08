@@ -131,15 +131,8 @@ body {
 }
 .chart-container {
 	width: 100%;
-	// height: 500px !important;
-	// display: flex;
-	// align-items: flex-end;
-	// background: grey;
 }
-#container {
-	// height: 80%;
-	// width: 50%;
-}
+
 .weather-info {
 	width: 100%;
 	color: #ffffff;
@@ -239,53 +232,23 @@ body {
 .windspeed-cntr {
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: flex-start;
 
 	#windspeed {
 		margin: 0px;
 	}
 
 	#windspeed-icon {
-		// height: 40px;
-		// width: 40px;
-		// border-radius: 10px;
-		// // background: asset_url("img/icons/windspeed.svg") no-repeat center center
-		// // 	contain;
-		// // margin-left: 30px;
-		// // background-size: contain;
-		// // display: grid;
-		// // justify-content: flex-end;
-		// background-image: url("../../img/icons/windspeed.png");
-		// background-size: contain;
-		// margin-right: 10px;
-
 		content: "";
-		background: asset_url("img/map-pin.svg") no-repeat center center;
+		background: asset_url("img/icons/windspeed.svg") no-repeat center center;
 		background-size: 100% 100%;
-		position: absolute;
-		left: 0px;
+		background-position: center;
+		z-index: 20;
+		margin-right: 20px;
 
-		background-color: #1a1a1a;
+		// width: 40px;
+		// height: 40px;
 	}
-
-	// #windspeed::before {
-	// 	content: "";
-	// 	background: asset_url("img/icons/nt_clear.svg") no-repeat center center;
-	// 	background-size: 100px 100px;
-	// 	// position: absolute;
-	// 	// left: 0px;
-	// 	background: red;
-	// 	height: 100px;
-	// 	width: 100px;
-	// }
-
-	// #windspeed-icon {
-	// 	// background: asset_url("img/icons/nt_clear.svg") no-repeat center center;
-	// 	// background-size: 100px 100px;
-	// 	background: red;
-	// height: 100px;
-	// width: 100px;
-	// }
 }
 
 @media only screen and (max-width: 3840px) and (orientation: landscape) {
@@ -331,6 +294,10 @@ body {
 		width: 64px;
 		height: 64px;
 		top: 12px;
+	}
+	#windspeed-icon {
+		width: 64px;
+		height: 64px;
 	}
 	#windspeed {
 		font-size: 40px;
@@ -381,6 +348,10 @@ body {
 		width: 48px;
 		height: 48px;
 		top: 12px;
+	}
+	#windspeed-icon {
+		width: 48px;
+		height: 48px;
 	}
 	#windspeed {
 		font-size: 30px;
@@ -434,6 +405,10 @@ body {
 		height: 64px;
 		top: 12px;
 	}
+	#windspeed-icon {
+		width: 64px;
+		height: 64px;
+	}
 }
 
 @media only screen and (max-width: 1440px) and (orientation: portrait) {
@@ -451,10 +426,6 @@ body {
 		// 	rgba(0, 0, 0, 0) 90.65%
 		// );
 	}
-	// .banner-shadow {
-	// 	height: 250px !important;
-	// 	// background: red;
-	// }
 	.w-summary {
 		width: 294px;
 		height: 294px;
@@ -488,6 +459,10 @@ body {
 		height: 48px;
 		top: 12px;
 	}
+	#windspeed-icon {
+		width: 48px;
+		height: 48px;
+	}
 	.chart-container {
 		height: 200px;
 	}
@@ -502,12 +477,13 @@ body {
 	}
 	.banner-text {
 		font-size: 48px;
-		padding: 64px 0;
+		padding: 55px 0;
 		// background: linear-gradient(
 		// 	164.87deg,
 		// 	#000000 -63.3%,
 		// 	rgba(0, 0, 0, 0) 90.65%
 		// );
+		// color: red;
 	}
 	.w-summary {
 		width: 252px;
@@ -542,6 +518,10 @@ body {
 		width: 32px;
 		height: 32px;
 		top: 12px;
+	}
+	#windspeed-icon {
+		width: 32px;
+		height: 32px;
 	}
 	#windspeed {
 		font-size: 38px;
@@ -598,6 +578,10 @@ body {
 		height: 20px;
 		top: 5px;
 	}
+	#windspeed-icon {
+		width: 20px;
+		height: 20px;
+	}
 	#windspeed {
 		font-size: 26px;
 	}
@@ -646,6 +630,10 @@ body {
 		width: 32px;
 		height: 32px;
 		top: 12px;
+	}
+	#windspeed-icon {
+		width: 32px;
+		height: 32px;
 	}
 }
 
@@ -722,6 +710,10 @@ body {
 		height: 16px;
 		top: 5px;
 	}
+	#windspeed-icon {
+		width: 16px;
+		height: 16px;
+	}
 }
 
 @media only screen and (max-width: 720px) and (orientation: portrait) {
@@ -770,6 +762,10 @@ body {
 		width: 20px;
 		height: 20px;
 		top: 5px;
+	}
+	#windspeed-icon {
+		width: 20px;
+		height: 20px;
 	}
 	#windspeed {
 		font-size: 20px;
@@ -820,6 +816,10 @@ body {
 		height: 16px;
 		top: 5px;
 	}
+	#windspeed-icon {
+		width: 16px;
+		height: 16px;
+	}
 }
 
 @media only screen and (max-width: 48em) {
@@ -827,7 +827,10 @@ body {
 		width: 18px;
 		height: 18px;
 		top: 5px;
-		// background-color: blue;
+	}
+	#windspeed-icon {
+		width: 18px;
+		height: 18px;
 	}
 	.banner-shadow {
 		height: 100px !important;
