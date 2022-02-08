@@ -119,7 +119,7 @@
 			eBody.className = "bg-default";
 		}
 
-		eBody.className = "bg-snow";
+		// eBody.className = "bg-rain";
 
 		// Get setting
 		var w_width = window.innerWidth;
@@ -213,14 +213,47 @@
 			}
 		}
 
+		function isInViewport(element) {
+			const rect = element.getBoundingClientRect();
+
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <=
+					(window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <=
+					(window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+
+		function isOutViewport(element) {
+			// Get element's bounding
+			var bounding = elem.getBoundingClientRect();
+
+			// Check if it's out of the viewport on each side
+			var out = {};
+			out.top = bounding.top < 0;
+			out.left = bounding.left < 0;
+			out.bottom =
+				bounding.bottom >
+				(window.innerHeight || document.documentElement.clientHeight);
+			out.right =
+				bounding.right >
+				(window.innerWidth || document.documentElement.clientWidth);
+			out.any = out.top || out.left || out.bottom || out.right;
+			out.all = out.top && out.left && out.bottom && out.right;
+
+			return out;
+		}
+
 		var bump_chart = false,
 			re_balance = 0;
 
-		var asmo = [
+		var cold_temp_test = [
 			-27.1, -37, -40.8, -36.6, -20.1, -36.4, -46.1, -45.4, -55.2, -45.7, -36.5,
 		];
 
-		temps = asmo;
+		// temps = cold_temp_test;
 
 		for (var i = 0; i < temps.length; i++) {
 			if (temps[i] < 0) bump_chart = true;
@@ -237,6 +270,31 @@
 
 			max_temp = 100;
 		}
+
+		function verifyTempOpacity() {
+			console.log("caret");
+
+			var temps = document.getElementsByClassName("bottom-temps");
+
+			Array.from(temps).map(function (el) {
+				// console.clear();
+
+				var parEl = el.parentElement;
+
+				// if (!isInViewport(el)) {
+				// 	parEl.style.opacity = 0;
+				// } else {
+				// 	parEl.style.opacity = 1;
+				// }
+			});
+		}
+
+		window.addEventListener("load", function (ev) {
+			verifyTempOpacity();
+			console.log("page is fully loaded");
+		});
+
+		window.addEventListener("resize", verifyTempOpacity, true);
 
 		/**
 		 * Run time process for first time
@@ -315,14 +373,17 @@
 				enabled: false,
 			},
 			plotOptions: {
+				// areaspline: {
+				// 	fillOpacity: 0.1,
+				// },
 				series: {
 					dataLabels: {
 						enabled: true,
 						formatter: function () {
 							return (
-								"<span " +
+								"<span class='bottom-temps'" +
 								"id='bottom-temp-" +
-								Math.round(Math.random() * (20 - 0) + 0) +
+								Math.round(Math.random() * (40 - 0) + 0) +
 								"'>" +
 								// ((this.y - 10).toFixed(1) - re_balance) +
 								Math.round(((this.y - 10).toFixed(1) - re_balance) * 10) / 10 +
@@ -350,7 +411,6 @@
 							],
 						],
 					},
-					fillOpacity: 0,
 				},
 			},
 			tooltip: {
