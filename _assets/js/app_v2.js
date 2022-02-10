@@ -119,7 +119,7 @@
 			eBody.className = "bg-default";
 		}
 
-		// eBody.className = "bg-rain";
+		eBody.className = "bg-overcast";
 
 		// Get setting
 		var w_width = window.innerWidth;
